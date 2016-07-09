@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logs</title>
+	<meta charset="utf-8">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.3/css/normalize.min.css" rel="stylesheet" type="text/css" />
+	<link href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.3/css/foundation.min.css" rel="stylesheet" type="text/css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.3/js/vendor/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.3/js/foundation.min.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>2016-04-23 13:34</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=YZVignZNSfE">https://www.youtube.com/watch?v=YZVignZNSfE</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-13 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-14 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-15 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+		<tr>
+			<td>2016-04-12 12:12</td>
+			<td><a data-reveal-id="myModal" href="https://www.youtube.com/watch?v=p6mJeiv1Oq8">https://www.youtube.com/watch?v=p6mJeiv1Oq8</a></td>
+		</tr>
+	</table>
+
+	<div id="myModal" class="reveal-modal" data-reveal>
+		<div id="player"></div>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+
+<script type="text/javascript">
+	$(document).foundation();
+
+	var tag = document.createElement('script');
+
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	// 3. This function creates an <iframe> (and YouTube player)
+	//    after the API code downloads.
+	var player;
+
+	function onYouTubeIframeAPIReady() {
+		player = new YT.Player('player', {
+			height: '500',
+			width: '900',
+			videoId: 'YZVignZNSfE',
+			events: {
+				'onStateChange': onPlayerStateChange
+			}
+		});
+	}
+
+
+	function onPlayerStateChange(event) {
+		if (event.data == YT.PlayerState.PLAYING) {
+			//player is playing
+		} else {
+			//player is paused
+		}
+	}
+
+	function stopVideo() {
+		player.stopVideo();
+	}
+
+	function playVideo() {
+		player.playVideo();
+	}
+
+	function pauseVideo() {
+		player.pauseVideo();
+	}
+
+
+	$(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+		playVideo();
+	});
+
+	$(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
+		pauseVideo();
+	});
+</script>
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 
+		SITE BY YOTAM MANN
+		yotammann.info
+	 -->
+	<title>PIANO</title>
+	<!--dependencies-->
+	<script src="jquery.js"></script>
+	<script src="modernizr.js"></script>
+	<script src='soundmanager2.js'></script>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="piano.css">
+</head>
+<body>
+	<noscript>
+		Please enable javascript for this page to work
+	</noscript>
+	<div id="container">
+		<div id="C"></div>
+		<div id="D"></div>
+		<div id="E"></div>
+		<div id="F"></div>
+		<div id="G"></div>
+	</div>
+	<div id="loading">
+		<div id="loadingText">Loading...</div>
+	</div>
+	<!--application-->
+	<script type="text/javascript">
+		/*
+			maps note names to image and audio names
+		*/
+		var KEYMAP = {
+			"C" : {
+				audio : "c4",
+				image : "piano_left",
+				keyCode : 37
+			},
+			"D" : {
+				audio : "d4",
+				image : "piano_up",
+				keyCode : 38
+			},
+			"E" : {
+				audio : "e4",
+				image : "piano_right",
+				keyCode : 39
+			},
+			"F" : {
+				audio : "f4",
+				image : "piano_down",
+				keyCode : 40
+			},
+			"G" : {
+				audio : "g4",
+				image : "piano_space",
+				keyCode : 32
+			},
+			"A" : {
+				audio : "a4",
+				image : "piano_click",
+				keyCode : null
+			}
+		};
+	</script>
+	<script src="inst.js"></script>
+</body>
+</html>
+

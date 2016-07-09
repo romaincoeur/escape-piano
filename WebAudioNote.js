@@ -66,7 +66,9 @@ INST.PLAYER.prototype.startNote = function(){
 	if (this.key.id == levels[level]){
 		if (level == levels.length-1) {
 			console.log('win');
-			window.location = "http://localhost";
+			setTimeout(function() {
+				window.location = "http://localhost";
+			}, 700);
 		}
 		else level++;
 	}
